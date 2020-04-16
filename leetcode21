@@ -1,0 +1,25 @@
+class Solution {
+    public int divide(int dividend, int divisor) {
+        int dividendsign = 1,divisorsign=1;
+         if(dividend < 0 )
+            dividendsign=-1;
+         if(divisor < 0)
+            divisorsign=-1;
+          int sign=  dividendsign*divisorsign;
+  
+    dividend = Math.abs(dividend); 
+    divisor = Math.abs(divisor); 
+  
+    if (dividend == 0)  
+    { 
+        return 0; 
+    } 
+  
+    if (divisor == 1)  
+    { 
+        return sign*dividend; 
+    } 
+   
+    return sign*(int)Math.floor(Math.exp(Math.log(dividend) - Math.log(divisor))); 
+    }
+}
